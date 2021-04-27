@@ -5,21 +5,18 @@ class ListComponent extends Component {
     super()
 
     this.state = {
-      array : ['Hello', 'this', 'is', 'an', 'array', 'of', 'strings']
+      listArray : ["Hello","this","is","an","array","of","strings"]
     }
   }
 
   render() {
     return (
       <div>
-        <h1>This is the ListComponent</h1>
-        <div>
-            {this.state.array.map((el)=>{
-              return (
-                <h2>{el}</h2>
-              )
-            })}
-        </div>
+        {this.state.listArray.map((el)=>{
+          return(
+            <h2>{el}</h2>
+          )
+        })}
       </div>
     )
   }

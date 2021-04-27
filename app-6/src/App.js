@@ -7,37 +7,42 @@ class App extends Component {
     super()
 
     this.state = {
-      inputVal : '', 
-      taskArray: []
+      taskArray : [],
+      taskInput : ''
     }
-
-    this.handleChange = this.handleChange.bind(this)
   }
   
-  handleChange(val) {
+  handleChange = (val) => {
     this.setState({
-      inputVal : val
+      taskInput : val
     })
   }
 
   addTask() {
+    const {taskInput, taskArray} = this.state
     this.setState({
-      taskArray : [...this.state.taskArray, this.state.inputVal],
-      inputVal : ''
+      taskArray : [...taskArray, taskInput],
+      taskInput : ''
     })
   }
+
+
 
   render() {
     return (
       <div className="App">
-        <h1>My to-do list:</h1>
+        <h1> My To-Do List: </h1>
         <input 
-        value={this.state.inputVal} 
-        placeholder={"Enter new task"} 
-        onChange={(e)=>{this.handleChange(e.target.value)}}
+        value={this.state.taskInput}
+        placeholder={"Which task should we add?"}
+        onChange={(e) => {this.handleChange(e.target.value)}} 
         />
-        <button onClick={()=>this.addTask()}> Add </button>
-        <ToDoList taskArray={this.state.taskArray}/>
+        <button 
+          onClick={() => this.addTask()}> Add Task 
+        </button>
+        <ToDoList 
+          taskArray={this.state.taskArray}
+        />
       </div>
     )
   }

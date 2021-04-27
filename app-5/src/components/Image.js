@@ -1,9 +1,9 @@
 import React from 'react'
 
 function Image(props) {
-  return (
-    <img src={props.url}/>
+  return(
+    <img src={props.img} alt={"mural"}/>
   )
 }
 
-export default Image;
+export default Image

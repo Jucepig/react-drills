@@ -1,17 +1,15 @@
 import React from 'react'
 
-function ToDoList (props) {
-    return (
-      <div>
-        <div>
-          {props.taskArray.map((el)=>{
-            return(
-              <h3>{el}</h3>
-            )
-          })}
-        </div>
-      </div>
-    )
-  }
+function ToDoList(props) {
+  return(
+    <div>
+      {props.taskArray.map((task) => {
+        return(
+          <h3>{task}</h3>
+        )
+      })}
+    </div>
+  )
+}
 
-export default ToDoList;
+export default ToDoList

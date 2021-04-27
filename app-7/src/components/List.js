@@ -1,12 +1,16 @@
 import React from 'react'
 import Todo from './Todo'
 
-function List (props) {
-  console.log('List prop :'+ props)
+function List(props) {
   return(
     <div>
-      {props.tasks.map((el, i)=>{
-        return <Todo key={i} task={el}/>
+      {props.taskArray.map((task, index)=> {
+        return (
+          <Todo 
+          key={index} 
+          task={task} 
+          />
+        )
       })}
     </div>
   )

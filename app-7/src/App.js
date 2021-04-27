@@ -3,32 +3,46 @@ import './App.css';
 import List from './components/List'
 import NewTask from './components/NewTask'
 
+
 class App extends Component {
   constructor() {
     super()
 
-    this.state = {
-      taskArray : []
+    this.state = { 
+      taskArray : [],
+      task : ''
     }
-
-    this.addTask = this.addTask.bind(this)
   }
 
-  addTask(task) {
+  addTask = () => {
+    const {taskArray, task} = this.state
     this.setState({
-      taskArray : [...this.state.taskArray, task]
+      taskArray : [task, ...taskArray],
+      task : ''
+    })
+  }
+
+  handleChange = (val) => {
+    this.setState({
+      task : val
     })
   }
 
   render() {
-    return (
+    return(
       <div className="App">
         <h1> My To-Do List: </h1>
-        <NewTask add={this.addTask}/>
-        <List tasks={this.state.taskArray}/>
+        <NewTask 
+        handleChangeFn={this.handleChange} 
+        addTaskFn={this.addTask} 
+        task={this.state.task}
+        />
+        <List 
+          taskArray={this.state.taskArray}
+        />
       </div>
     )
-  }  
+  }
 }
 
 export default App;

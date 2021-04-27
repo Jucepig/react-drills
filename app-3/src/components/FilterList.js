@@ -5,8 +5,8 @@ class FilterList extends Component {
     super()
 
     this.state = {
-      array : ['pikachu', 'charizard', 'squirtle', 'bulbasaur', 'meowth', 'ekans', 'koffing' ], 
-      inputVal : ''
+      filterVal : '',
+      array : ['pikachu', 'charizard', 'venusaur', 'hitmonchamp', 'hitmonlee', 'nidoqueen', 'nidoqueen']
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -14,30 +14,29 @@ class FilterList extends Component {
 
   handleChange(val) {
     this.setState({
-      inputVal : val
+      filterVal : val
     })
   }
 
-  render () {
+  render() {
     return(
       <div>
-        <h1>This is the FilterList</h1>
-        <input onChange={(e)=>{this.handleChange(e.target.value)}} />
+        <input placeholder={"What should be filtered?"} onChange={(e) => {this.handleChange(e.target.value)}} />
         <div>
           {this.state.array
           .filter((el)=>{
-            return el.includes(this.state.inputVal)
+            return el.includes(this.state.filterVal)
           })
           .map((el)=>{
             return(
-              <h3>{el}</h3>
+              <h2>{el}</h2>
             )
-          })}
+          })
+          }
         </div>
       </div>
     )
   }
 }
 
-export default FilterList;
-
+export default FilterList

@@ -5,7 +5,7 @@ import Image from './components/Image'
 function App() {
   return (
     <div className="App">
-      <Image url={"https://images.unsplash.com/photo-1598669266459-eef1467c15be?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVtb24lMjBzbGF5ZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"}/>
+      <Image img={"https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"} />
     </div>
   );
 }

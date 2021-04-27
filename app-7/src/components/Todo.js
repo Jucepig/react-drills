@@ -1,10 +1,9 @@
 import React from 'react'
 
 function Todo(props) {
-  console.log(props)
-  return (
-    <h4>{props.task}</h4>
+  return(
+    <h3>{props.task}</h3>
   )
 }
 
-export default Todo;
+export default Todo

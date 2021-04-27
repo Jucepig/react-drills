@@ -4,28 +4,27 @@ class InputClass extends Component {
   constructor() {
     super()
 
-    this.state ={
+    this.state = {
       inputVal : ''
     }
 
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(value) {
+  handleChange(val) {
     this.setState({
-      inputVal : value
+      inputVal : val
     })
   }
 
   render() {
-    return (
+    return(
       <div>
-        <h1> This is a class component</h1>
-        <input onChange={(e) => this.handleChange(e.target.value)}/>
-        <h4>{this.state.inputVal}</h4>
+        <input onChange={(e) => {this.handleChange(e.target.value)}}/>
+        <h3>{this.state.inputVal}</h3>
       </div>
     )
   }
 }
 
-export default InputClass;
+export default InputClass
